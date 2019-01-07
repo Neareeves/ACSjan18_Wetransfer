@@ -60,7 +60,7 @@ p {
 	font-size: 1.2em;
 	width: 100%;
 }
-.cartepostale input[type='mail'], .cartepostale textarea, .cartepostale input[value='Envoyer'] {
+.cartepostale input[type='mail'], .cartepostale textarea, .cartepostale input[value='Envoyer'], .cartepostale input[type='text'] {
 	border:none;
 	border-bottom-style: solid;
 	border-bottom-color: #7FC8EA;
