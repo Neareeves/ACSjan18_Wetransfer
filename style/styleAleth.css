@@ -1,0 +1,102 @@
+body {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+p {
+
+
+	font-family: 'Dancing Script', cursive;
+
+	font-family: 'Sacramento', cursive;
+
+	font-family: 'Marck Script', cursive;
+
+	font-family: 'Parisienne', cursive;
+
+
+}
+/**************** NAV ***************/
+.flexnav {
+	display: flexbox;
+	justify-content: space-between;
+	background-color: #7FC8EA;
+}
+
+/**************** HOME : la carte postale d'envoi ***************/
+
+/*contenant du formulaire*/
+#cartepostale {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 55%;
+	font-family: 'Dancing Script', cursive;
+	padding:15px;
+	
+	background-image: repeating-linear-gradient(45deg, #FFF, #FFF 30px, rgba(245, 20, 20, 1) 10px, rgba(245, 20, 20, 1) 10px, rgba(78, 44, 246, 1) 50px);
+	/*background-image: repeating-linear-gradient(45deg, #FFF, rgba(245, 20, 20, 1) 30px, #FFF 10px, rgba(78, 44, 246, 1)  10px, rgba(245, 20, 20, 1) 50px);*/
+}
+
+#cartepostaleContenu {
+	background-color: #FFF;
+	/*color: #7FC8EA;*/
+}
+/*contenu du formulaire*/
+.cartepostale { 
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+
+/*fond de page*/
+.container {
+	background-color: #7FC8EA;
+	padding-top: 150px;
+}
+.cartepostale input, .cartepostale textarea {
+	font-family: 'Dancing Script', cursive;
+	font-size: 1.2em;
+	width: 100%;
+}
+.cartepostale input[type='mail'], .cartepostale textarea, .cartepostale input[value='Envoyer'] {
+	border:none;
+	border-bottom-style: solid;
+	border-bottom-color: #7FC8EA;
+	border-bottom-width: 0.5px;
+}
+
+.cartepostale input[type='submit'] {
+background-color: #FFF;
+}
+
+.cartepostale input[type='file'] {
+background-color: #FFF;
+}
+
+
+
+
+
+
+/**************** CONFIRMATION ***************/
+
+
+
+/******************* media queries ************************/
+@media all and (max-width: 992px) {
+	
+#cartepostale {
+
+	width: 75%;
+}
+}
+
+@media all and (max-width: 768px) {
+.cartepostale { 
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+}
