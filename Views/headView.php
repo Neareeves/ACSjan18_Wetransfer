@@ -12,10 +12,10 @@
  	 <meta property="og:type"          content="website" />
   	<meta property="og:title"         content="ERA, faites voyager vos fichiers" />
 	  <meta property="og:description"   content="Avec ERA, envoyez d'un clic vos gros dossiers vers leurs destinataires!" />
- 	 <meta property="og:image"         content="Images/logo.png" />
+ 	 <meta property="og:image"         content="Images/logoIcone.png" />
 
 	<title>Era, faites voyager vos fichers</title>
-	 <link rel="shortcut icon" type="image/png" href="Images/logo.png">
+	 <link rel="shortcut icon" type="image/png" href="Images/logoIcone.png">
 	   <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Marck+Script|Parisienne|Sacramento" rel="stylesheet"> 
 	<link rel="stylesheet" href="style/styleEmilie.css">
 	<link rel="stylesheet" href="style/styleRayan.css">

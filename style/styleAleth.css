@@ -24,7 +24,8 @@ p {
 	background-color: #7FC8EA;
 }
 .flexnav img {
-	max-width: 50px;
+	max-width: 20%;
+	margin: 13px;
 }
 
 /**************** HOME : la carte postale d'envoi ***************/
@@ -51,7 +52,7 @@ p {
 .cartepostale { 
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: center;
 }
 
 
@@ -59,7 +60,7 @@ p {
 /*fond de page*/
 .container {
 	background-color: #7FC8EA;
-	padding-top: 80px;
+	padding-top: 70px;
 }
 .cartepostale input, .cartepostale textarea {
 	font-family: 'Dancing Script', cursive;
@@ -83,14 +84,12 @@ p {
 
 /**************** HOME : le dessin de ville ***************/
 .dessinVille img {
-	max-width: 100%;
-	position: fixed;
+	max-width: 50%;
 	bottom: 0;
 	max-height: 250px;
+	position: absolute;
 }
 .dessinVille {
-
-	position: absolute;
 	bottom: 0;
 	text-align: center;
 }
@@ -100,10 +99,10 @@ p {
 /*Dessin*/
 .dessinIle img{
 	max-width: 50%;
-	position: fixed;
+	position: absolute;
 	bottom: 0;
 	max-height: 250px;
-
+right: 0;
 }
 /*.dessinIle {
 	background-color: #7FC8EA;
