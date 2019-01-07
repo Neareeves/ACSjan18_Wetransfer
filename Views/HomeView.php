@@ -24,7 +24,7 @@
 			</div>
 		</div>
 		<div class="dessinVille">
-			<img src="Images/">
+			<img src="Images/ville.png">
 		</div>
 	</div>
 </main>
