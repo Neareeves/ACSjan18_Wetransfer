@@ -8,6 +8,6 @@ include('Models/Wetransfer.php');
 
 
 //inclure la vue
-include('Views/HomeView.php');
+include('Views/ConfirmationView.php');
 
 ?>
