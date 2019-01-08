@@ -41,7 +41,7 @@ if (isset($_POST['envoyer'])) {
 	}
 // (add .$nomDossier.'/ dans le chemin, mais comment créer le dossier?)
 
-	// $new_file=InsertInfo($nom, $destinataire,$expediteur,$message);
+	// $new_file=InsertInfo($nom, $destinataire,$expediteur,$message,$definitive_folder_path);
 
 
 
