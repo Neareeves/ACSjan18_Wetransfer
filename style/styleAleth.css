@@ -113,6 +113,38 @@ p {
 	bottom: 0;
 	}*/
 	
+	/*******************animation*****************/
+	/*Keyframes*/Keyframes
+	@keyframe TitanicTranslate {
+		0% {
+
+		}
+		50% {
+
+		}
+		100% {
+
+		}
+	}
+
+	@keyframe icebergAppears {
+		0% {
+		transform: translateY(300px);
+		}
+		100% {
+			transform: translateY(0px);
+		}
+	}
+	/*Titanic VS Iceberg*/
+	#boat {
+		animation: 5s TitanicTranslate ease-in-out infinite;
+	}
+	#iceberg {
+	position: absolute;
+		animation: icebergAppears 3s ease-in 1s infinite reverse both running;
+	}
+
+
 
 	/******************* media queries ************************/
 	@media all and (max-width: 992px) {
