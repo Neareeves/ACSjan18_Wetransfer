@@ -13,10 +13,17 @@ if (isset($_POST['envoyer'])) {
 	$expediteur= $_POST['expediteur'];
 	$nom= htmlspecialchars($_POST['nom'], ENT_QUOTES); 
 	$message=htmlspecialchars($_POST['message'], ENT_QUOTES);
+	InsertInfo($nom, $destinataire,$expediteur,$message);
+
 	$nomDossier = htmlspecialchars($_POST['nomDossier'], ENT_QUOTES);
-$temporaryUploadpath = $_FILES['upload']['tmp_name'];
-$definitivePathName = 'uploads/'. $_FILES['upload']['name'];
+	$temporaryUploadpath = $_FILES['upload']['tmp_name'];
+	$definitivePathName = 'uploads/'. $_FILES['upload']['name'];
 // (add .$nomDossier.'/ dans le chemin, mais comment créer le dossier?)
+
+
+
+
+
 
 $extension = substr(strrchr($_FILES['upload']['name'], "."), 1);
 move_uploaded_file($temporaryUploadpath, $definitivePathName); 
