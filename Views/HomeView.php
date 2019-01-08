@@ -16,7 +16,7 @@
 							<input type="mail" name="destinataire" placeholder="Envoyer à "><br>
 							<input type="mail" name="expediteur" placeholder="De la part de (mail)"><br>
 							<input type="text" name="nom" placeholder="signé "><br>
-							<input type="text" name="nomDossier"><br>
+							<input type="text" name="nomDossier" placeholder="Nom du dossier"><br>
 							<textarea type="text" name="message" placeholder="Message :"></textarea><br>
 							<input type="submit" name="envoyer" value="Envoyer">
 						</div>

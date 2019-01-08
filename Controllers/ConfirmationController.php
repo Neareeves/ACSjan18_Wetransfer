@@ -15,14 +15,21 @@ if (isset($_POST['envoyer'])) {
 	$message=htmlspecialchars($_POST['message'], ENT_QUOTES);
 	$nomDossier = htmlspecialchars($_POST['nomDossier'], ENT_QUOTES);
 
-$total = count($_FILES['upload']['tmp_name']);
-echo $total;
-	
+	$total = count($_FILES['upload']['tmp_name']);
+	echo $total;
+	echo $nomDossier.' nom dossier';
+
+	$dossier = mkdir('uploads/'.$nomDossier);
+	echo "dossier ".$dossier;
+
+
+	$definitive_folder_path='uploads/'.$nomDossier;
 	for ($i=0; $i < $total; $i++) { 
 	$temporaryUploadpath = $_FILES['upload']['tmp_name'][$i];
 
-	$definitivePathName = 'uploads/'. $_FILES['upload']['name'][$i];
-		$message_confirmation[]="";
+	$definitivePathName = 'uploads/'.$nomDossier.'/'. $_FILES['upload']['name'][$i];
+	$extension = substr(strrchr($_FILES['upload']['name'], "."), 1);
+	$message_confirmation[]="";
 
 		if (move_uploaded_file($temporaryUploadpath, $definitivePathName)){
 			$message_confirmation[] .= 'Le fichier "'.$_FILES['upload']['name'][$i].'"" a bien été uploadé.<br>';
@@ -40,7 +47,6 @@ echo $total;
 
 
 
-// $extension = substr(strrchr($_FILES['upload']['name'], "."), 1);
 
 
 // // Import PHPMailer classes into the global namespace
