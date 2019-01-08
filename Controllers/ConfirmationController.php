@@ -13,20 +13,34 @@ if (isset($_POST['envoyer'])) {
 	$expediteur= $_POST['expediteur'];
 	$nom= htmlspecialchars($_POST['nom'], ENT_QUOTES); 
 	$message=htmlspecialchars($_POST['message'], ENT_QUOTES);
-	InsertInfo($nom, $destinataire,$expediteur,$message);
-
 	$nomDossier = htmlspecialchars($_POST['nomDossier'], ENT_QUOTES);
-	$temporaryUploadpath = $_FILES['upload']['tmp_name'];
-	$definitivePathName = 'uploads/'. $_FILES['upload']['name'];
+
+$total = count($_FILES['upload']['tmp_name']);
+echo $total;
+	
+	for ($i=0; $i < $total; $i++) { 
+	$temporaryUploadpath = $_FILES['upload']['tmp_name'][$i];
+
+	$definitivePathName = 'uploads/'. $_FILES['upload']['name'][$i];
+		$message_confirmation[]="";
+
+		if (move_uploaded_file($temporaryUploadpath, $definitivePathName)){
+			$message_confirmation[] .= 'Le fichier "'.$_FILES['upload']['name'][$i].'"" a bien été uploadé.<br>';
+			
+		} else {
+			$message_confirmation[] .='Le fichier "'.$_FILES['upload']['name'][$i].'" a fait naufrage avec le Titanic.';
+			
+		} 
+	}
 // (add .$nomDossier.'/ dans le chemin, mais comment créer le dossier?)
 
+	// $new_file=InsertInfo($nom, $destinataire,$expediteur,$message);
 
 
 
 
 
-$extension = substr(strrchr($_FILES['upload']['name'], "."), 1);
-move_uploaded_file($temporaryUploadpath, $definitivePathName); 
+// $extension = substr(strrchr($_FILES['upload']['name'], "."), 1);
 
 
 // // Import PHPMailer classes into the global namespace

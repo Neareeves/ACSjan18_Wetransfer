@@ -4,7 +4,11 @@
 	<div id="cartepostale">
 		<div id="cartepostaleContenu">
 			<p>
-				<?php echo $message_confirmation;
+				<?php 
+for ($i=0; $i < count($message_confirmation); $i++) { 
+				echo $message_confirmation[$i];
+}
+
 				?>
 			</p>
 		</div>

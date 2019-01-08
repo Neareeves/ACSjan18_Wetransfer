@@ -10,7 +10,7 @@
 					<div class="cartepostale">
 						<div class="blocFichiers">
 							<div>Ajoutez des fichiers</div>
-							<input type="file" name="upload" accept="image/*, docx, .doc, .xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"  multiple>
+							<input type="file" name="upload[]" accept="image/*, docx, .doc, .xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"  multiple>
 						</div>
 						<div class="blocRenseignements">
 							<input type="mail" name="destinataire" placeholder="Envoyer à "><br>
