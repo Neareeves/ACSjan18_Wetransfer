@@ -16,20 +16,22 @@ if (isset($_POST['envoyer'])) {
 	$nomDossier = htmlspecialchars($_POST['nomDossier'], ENT_QUOTES);
 
 	$total = count($_FILES['upload']['tmp_name']);
-	echo $total;
-	echo $nomDossier.' nom dossier';
+	
 
-	$dossier = mkdir('uploads/'.$nomDossier);
-	echo "dossier ".$dossier;
-
+	$dossier = mkdir('uploads/'.$nomDossier,0777,TRUE);
+	
 
 	$definitive_folder_path='uploads/'.$nomDossier;
+
 	for ($i=0; $i < $total; $i++) { 
 	$temporaryUploadpath = $_FILES['upload']['tmp_name'][$i];
 
 	$definitivePathName = 'uploads/'.$nomDossier.'/'. $_FILES['upload']['name'][$i];
-	$extension = substr(strrchr($_FILES['upload']['name'], "."), 1);
+
 	$message_confirmation[]="";
+
+	$extension = substr(strrchr($_FILES['upload']['name'][$i], "."), 1);
+if (1 == 1){  
 
 		if (move_uploaded_file($temporaryUploadpath, $definitivePathName)){
 			$message_confirmation[] .= 'Le fichier "'.$_FILES['upload']['name'][$i].'"" a bien été uploadé.<br>';
@@ -38,14 +40,15 @@ if (isset($_POST['envoyer'])) {
 			$message_confirmation[] .='Le fichier "'.$_FILES['upload']['name'][$i].'" a fait naufrage avec le Titanic.';
 			
 		} 
+}
 	}
 // (add .$nomDossier.'/ dans le chemin, mais comment créer le dossier?)
 
-	// $new_file=InsertInfo($nom, $destinataire,$expediteur,$message,$definitive_folder_path);
+$new_file=InsertInfo($uniqId,$nom, $destinataire,$expediteur,$message,$definitive_folder_path);
 
 
 
-
+echo $new_file;
 
 
 
