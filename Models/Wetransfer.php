@@ -3,7 +3,7 @@
 //Le modèle contient toutes les fonctions d'appel à la base de données.
 include('Models/ConnectionBDD.php');
 $uniqId=uniqid();
-echo $uniqId;
+
 function InsertInfo($uniqId,$nom, $destinataire,$expediteur,$message, $definitive_folder_path) {
 
     global $dbh;
@@ -28,3 +28,11 @@ function InsertInfo($uniqId,$nom, $destinataire,$expediteur,$message, $definitiv
 // return $id;
 }
 
+function pourTelecharger($idComplex){
+	global $dbh;
+	$id=$dbh->prepare("SELECT `chemin_local` FROM `wetransfer` WHERE `uniqid`= '".$idComplex."'");
+	$requeteOK=$id->execute();
+// echo $requeteOK;
+$id=$id->fetch();
+return $id;
+}

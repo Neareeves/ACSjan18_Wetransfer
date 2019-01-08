@@ -48,7 +48,8 @@ $new_file=InsertInfo($uniqId,$nom, $destinataire,$expediteur,$message,$definitiv
 
 
 
-echo $new_file;
+// a envoyer : l'id ($uniqId), dans l'url
+//$url_cible=[DOCUMENT_ROOT]/?id=$uniqId;
 
 
 
