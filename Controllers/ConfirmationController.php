@@ -10,6 +10,10 @@ if (isset($_POST['envoyer'])) {
 	$expediteur= $_POST['expediteur'];
 	$nom= htmlspecialchars($_POST['nom'], ENT_QUOTES); 
 	$message=htmlspecialchars($_POST['message'], ENT_QUOTES);
+	InsertInfo($nom, $destinataire,$expediteur,$message);
+	echo $message_confirmation;
+}
+
 
 
 
