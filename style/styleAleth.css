@@ -114,22 +114,47 @@ p {
 	}*/
 	
 	/*******************animation*****************/
-	/*Keyframes*/Keyframes
-	@keyframe TitanicTranslate {
+	/*Keyframes*/
+	@keyframes TitanicTranslate {
 		0% {
-
+			transform: translateX(0px);
 		}
-		50% {
-
+		20% {
+			transform: translateX(30px);
+		}
+		40% {
+			transform: translateX(60px);
+		}
+		55% {
+			transform: rotate(90deg) translateX(50px);
+		}	
+		75%{
+			transform: rotate(90deg) translateX(100px);
 		}
 		100% {
+			transform: rotate(90deg) translateX(360px);
 
 		}
 	}
 
-	@keyframe icebergAppears {
+	@keyframes icebergAppears {
 		0% {
-		transform: translateY(300px);
+			transform: translateY(300px);
+		}
+		25% {
+			transform: translateY(0px);
+		}
+		50%{
+			transform: translateY(20px);
+		}
+		63%{
+			transform: translateY(-20px);
+		}
+		75%{
+			transform: translateY(-10px);
+		}
+		87% {
+			transform: translateY(+10px);
 		}
 		100% {
 			transform: translateY(0px);
@@ -137,11 +162,12 @@ p {
 	}
 	/*Titanic VS Iceberg*/
 	#boat {
-		animation: 5s TitanicTranslate ease-in-out infinite;
+		transform-origin: 40% 40%;
+		animation:  TitanicTranslate 5s linear 1s infinite;
 	}
 	#iceberg {
-	position: absolute;
-		animation: icebergAppears 3s ease-in 1s infinite reverse both running;
+		position: absolute;
+		animation: icebergAppears 3s ease-in 1s infinite  both running;
 	}
 
 

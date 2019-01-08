@@ -4,7 +4,7 @@
 include('Models/ConnectionBDD.php');
 
 
-function getAllMovies() {
+function insertInfo() {
     global $dbh;
 
     $movies = $dbh->query('SELECT * FROM movies');

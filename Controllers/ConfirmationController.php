@@ -5,15 +5,21 @@ include('Models/Wetransfer.php');
 
 // stocker dans $message_confirmation avec un if : si message envoyé : "votre message a bien été envoyé". si failure : "nous n'avons pas pu accueillir vos fichiers"
  
+
+ //basename() pour protéger?
+
 if (isset($_POST['envoyer'])) {
 	$destinataire = $_POST['destinataire'];
 	$expediteur= $_POST['expediteur'];
 	$nom= htmlspecialchars($_POST['nom'], ENT_QUOTES); 
 	$message=htmlspecialchars($_POST['message'], ENT_QUOTES);
+	$nomDossier = htmlspecialchars($_POST['nomDossier'], ENT_QUOTES);
+$temporaryUploadpath = $_FILES['upload']['tmp_name'];
+$definitivePathName = 'uploads/'. $_FILES['upload']['name'];
+// (add .$nomDossier.'/ dans le chemin, mais comment créer le dossier?)
 
-
-
-
+$extension = substr(strrchr($_FILES['upload']['name'], "."), 1);
+move_uploaded_file($temporaryUploadpath, $definitivePathName); 
 
 
 // // Import PHPMailer classes into the global namespace
