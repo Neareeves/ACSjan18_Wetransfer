@@ -10,15 +10,15 @@
 					<div class="cartepostale">
 						<div class="blocFichiers">
 							<div>Ajoutez des fichiers</div>
-							<input type="file" name="upload[]" accept="image/*, docx, .doc, .xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"  multiple>
+							<input type="file" name="upload[]" accept="image/*, docx, .doc, .xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"  multiple required>
 						</div>
 						<div class="blocRenseignements">
-							<input type="mail" name="destinataire" placeholder="Envoyer à "><br>
-							<input type="mail" name="expediteur" placeholder="De la part de (mail)"><br>
-							<input type="text" name="nom" placeholder="signé "><br>
-							<input type="text" name="nomDossier" placeholder="Nom du dossier"><br>
-							<textarea type="text" name="message" placeholder="Message :"></textarea><br>
-							<input type="submit" name="envoyer" value="Envoyer">
+							<input id="email" type="email" name="destinataire" placeholder="Envoyer à " required><br>
+							<input id="email" type="email" name="expediteur" placeholder="De la part de (mail)" required><br>
+							<input id="nom_expediteur" type="text" name="nom" placeholder="signé "><br>
+							<input id="nom_dossier" type="text" name="nomDossier" placeholder="Nom du dossier" required><br>
+							<textarea id="message" type="text" name="message" placeholder="Message :"></textarea><br>
+							<input id="envoyer" type="submit" name="envoyer" value="Envoyer">
 						</div>
 					</div>
 				</form>

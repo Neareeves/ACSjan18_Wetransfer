@@ -87,6 +87,11 @@ p {
 .cartepostale input[type='file'] {
 	background-color: #FFF;
 }
+#resultat *{
+	font-size: 1.5em;
+		font-family: 'Parisienne', cursive;
+
+}
 
 /**************** HOME : le dessin de ville ***************/
 .dessinVille img {
