@@ -16,7 +16,7 @@
 
 	<title>Era, faites voyager vos fichers</title>
 	 <link rel="shortcut icon" type="image/png" href="Images/logoIcon.png">
-	   <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Marck+Script|Parisienne|Sacramento" rel="stylesheet"> 
+	   <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Marck+Script|Parisienne|Sacramento|Damion" rel="stylesheet"> 
 	<link rel="stylesheet" href="style/styleEmilie.css">
 	<link rel="stylesheet" href="style/styleRayan.css">
 	<link rel="stylesheet" href="style/styleAleth.css">

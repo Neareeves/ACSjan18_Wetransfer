@@ -33,7 +33,8 @@ if (isset($_POST['envoyer'])) {
 		$message_confirmation[]="";
 
 		$extension = substr(strrchr($_FILES['upload']['name'][$i], "."), 1);
-		if (1 == 1){  
+    
+		if ($extension !== 'exe' || $extension !== 'php'){  
 
 			if (move_uploaded_file($temporaryUploadpath, $definitivePathName)){
 				$message_confirmation[] .= 'Le fichier "'.$_FILES['upload']['name'][$i].'"" a bien été uploadé.<br>';

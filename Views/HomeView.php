@@ -13,8 +13,8 @@
 							<input type="file" name="upload[]" accept="image/*, docx, .doc, .xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"  multiple required>
 						</div>
 						<div class="blocRenseignements">
-							<input id="email" type="email" name="destinataire" placeholder="Envoyer à " required><br>
-							<input id="email" type="email" name="expediteur" placeholder="De la part de (mail)" required><br>
+							<input id="emaildes" type="email" name="destinataire" placeholder="Envoyer à " required><br>
+							<input id="emailexp" type="email" name="expediteur" placeholder="De la part de (mail)" required><br>
 							<input id="nom_expediteur" type="text" name="nom" placeholder="signé "><br>
 							<input id="nom_dossier" type="text" name="nomDossier" placeholder="Nom du dossier" required><br>
 							<textarea id="message" type="text" name="message" placeholder="Message :"></textarea><br>

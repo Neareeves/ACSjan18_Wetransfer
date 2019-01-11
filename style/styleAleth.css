@@ -5,27 +5,26 @@ body {
 	background-color: #7FC8EA;
 }
 p {
-
-
-	font-family: 'Dancing Script', cursive;
-
 	font-family: 'Sacramento', cursive;
-
 	font-family: 'Marck Script', cursive;
-
 	font-family: 'Parisienne', cursive;
-
+	font-family: 'Dancing Script', cursive;
+	font-family: 'Damion', cursive;
 
 }
 /**************** NAV ***************/
 .flexnav {
-	display: flexbox;
-	justify-content: space-between;
+	/*display: flexbox;
+	justify-content: space-between;*/
 	background-color: #7FC8EA;
 }
 .flexnav img {
+	display: block;
 	max-width: 20%;
 	margin: 13px;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 /**************** HOME : la carte postale d'envoi ***************/
@@ -41,39 +40,52 @@ p {
 	background-image: repeating-linear-gradient(45deg, #FFF, #FFF 30px, rgba(245, 20, 20, 1) 10px, rgba(245, 20, 20, 1) 10px, rgba(78, 44, 246, 1) 50px);
 	/*background-image: repeating-linear-gradient(45deg, #FFF, rgba(245, 20, 20, 1) 30px, #FFF 10px, rgba(78, 44, 246, 1)  10px, rgba(245, 20, 20, 1) 50px);*/
 	margin-bottom: 40px;
+	box-shadow: 5px 5px 5px rgba(73, 86, 26, 0.4);
 }
 
 #cartepostaleContenu {
 	background-color: #FFF;
 	/*color: #7FC8EA;*/
 	padding: 30px 5px;
+	font-family: 'Damion', cursive;
+}
+#cartepostaleContenu p {
+	font-family: 'Dancing Script', cursive;
+	font-size: x-large;
 }
 /*contenu du formulaire*/
 .cartepostale { 
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+
 }
 
-
-
+#resultat{
+	text-align: center;
+}
 /*fond de page*/
 .container {
 	background-color: #7FC8EA;
-	padding-top: 70px;
+	padding-top: 10px;
+
 }
+/*#uploadID {
+display: none;
+}*/
 .cartepostale input, .cartepostale textarea {
 	font-family: 'Dancing Script', cursive;
 	font-size: 1.2em;
-	width: 100%;
+	width: 95%;
+	margin: 3px 0;
 }
-.cartepostale input[type='mail'], .cartepostale textarea, .cartepostale input[value='Envoyer'], .cartepostale input[type='text'] {
+.cartepostale input[type='email'], .cartepostale textarea, .cartepostale input[value='Envoyer'], .cartepostale input[type='text'] {
 	border:none;
 	border-bottom-style: solid;
-	border-bottom-color: rgba(127, 200, 234, 0.4);
+	border-bottom-color: rgba(127, 200, 234, 0.2);
 	border-bottom-width: 0.5px;
 }
-.cartepostale input[type='mail']:focus, .cartepostale textarea:focus, .cartepostale input[value='Envoyer']:focus, .cartepostale input[type='text']:focus {
+.cartepostale input[type='email']:focus, .cartepostale textarea:focus, .cartepostale input[value='Envoyer']:focus, .cartepostale input[type='text']:focus {
 	border:none;
 	border-bottom-style: solid;
 	border-bottom-color: rgba(127, 200, 234, 1);
@@ -87,22 +99,34 @@ p {
 .cartepostale input[type='file'] {
 	background-color: #FFF;
 }
-#resultat *{
+
+#resultat {
 	font-size: 1.5em;
-		font-family: 'Parisienne', cursive;
+	font-family: 'Parisienne', cursive;
 
 }
+#emaildes, #emailexp {
+	border: none;
+	border-bottom-style: solid;
+	border-bottom-color: rgba(127, 200, 234, 0.2);
+	border-bottom-width: 0.5px;
+}
+#emaildes:focus, #emailexp:focus {
+	border-bottom-color: rgba(127, 200, 234, 1);
 
+}
 /**************** HOME : le dessin de ville ***************/
 .dessinVille img {
 	max-width: 50%;
 	position: absolute;
 	bottom: 0;
 	max-height: 250px;
-	left: 25%;
+	left: 30%;
 
 }
-
+.dessinVille {
+	
+}
 /**************** CONFIRMATION ***************/
 /*Dessin*/
 .dessinIle img{
@@ -117,12 +141,17 @@ p {
 	position: absolute;
 	bottom: 0;
 	}*/
-	
+	#cartepostaleContenu > p > a {
+		font-family: 'Marck Script', cursive;
+}
+#cartepostaleContenu {
+	text-align: center;
+}
 	/*******************animation*****************/
 	/*Keyframes*/
-	@keyframes TitanicTranslate {
+	/*@keyframes TitanicTranslate {
 		0% {
-			transform: translateX(0px);
+			transform: translateX(-100%);
 		}
 		20% {
 			transform: translateX(30px);
@@ -164,15 +193,73 @@ p {
 		100% {
 			transform: translateY(0px);
 		}
+		}*/
+
+		@keyframes TitanicTranslate {
+			0% {
+				transform: translateX(-500px);
+			}
+			20% {
+				transform: translateX(30px);
+			}
+			40% {
+				transform: translateX(60px);
+			}
+			55% {
+				transform: rotate(90deg) translateX(50px);
+			}	
+			75%{
+				transform: rotate(90deg) translateX(100px);
+			}
+			100% {
+				transform: rotate(90deg) translateX(360px);
+
+			}
+		}
+
+		@keyframes icebergAppears {
+			0% {
+				transform: translate(600px,300px);
+			}
+			25% {
+				transform: translate(600px,0px);
+			}
+			50%{
+				transform: translate(600px,20px);
+			}
+			63%{
+				transform: translateY(-20px);
+			}
+			75%{
+				transform: translateY(-10px);
+			}
+			87% {
+				transform: translateY(+10px);
+			}
+			100% {
+				transform: translateY(0px);
+			}
+		}
+		/*Titanic VS Iceberg*/
+		.titanic {
+			z-index: 1000;
+		/*position: relative;
+		left:0%;
+		top: 50%;*/
+		width: 100%;
+		margin-right:auto;
+		margin-left: auto;
 	}
-	/*Titanic VS Iceberg*/
 	#boat {
 		transform-origin: 40% 40%;
 		animation:  TitanicTranslate 5s linear 1s infinite;
+		z-index: 9954544;
 	}
 	#iceberg {
 		position: absolute;
 		animation: icebergAppears 3s ease-in 1s infinite  both running;
+		z-index: 5555556;
+		right:10px;
 	}
 
 
