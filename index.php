@@ -11,4 +11,9 @@ else {
 $page = ucfirst($page); //On passe la première lettre en majuscule car les controlleurs s'appellent FilmController.php et HomeController.php mais les URLs sont en général en minuscule
 
 //On inclut le controller en fonction de la page demandée
-include('Controllers/'.$page.'Controller.php');
+if (is_file('Controllers/'.$page.'Controller.php')){
+    include ('Controllers/'.$page.'Controller.php');  
+} 
+else {
+     include ('404.php')  
+} 
