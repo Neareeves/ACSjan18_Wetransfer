@@ -6,11 +6,13 @@
 		<div id="cartepostale">
 			<div id="cartepostaleContenu">
 				
+				<h1 class="titreHome">Utilisez Era pour transférer vos fichiers de manière rapide et sécurisée. </h1>
 				<form action="?page=confirmation" method="post" enctype="multipart/form-data">
 					<div class="cartepostale">
 						<div class="blocFichiers">
 							<div>Ajoutez des fichiers</div>
-							<input type="file" name="upload[]" accept="image/*, docx, .doc, .xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"  multiple required>
+							<label id="uploadID"><input id="uploadID" type="file" name="upload[]" accept="image/*, docx, .doc, .xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"  multiple required></label>
+							<input type="hidden" name="MAX_FILE_SIZE" value="2000000000" />
 						</div>
 						<div class="blocRenseignements">
 							<input id="email" type="email" name="destinataire" placeholder="Envoyer à " required><br>
