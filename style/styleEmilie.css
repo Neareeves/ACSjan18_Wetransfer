@@ -57,8 +57,8 @@ table {
 /* Font */
 
 @font-face {
-    font-family: 'Archimedes';
-    src: url(fonts/Archimedes_Regular.otf);
+    font-family: 'Coming Soon', cursive;
+    src: url(fonts/ComingSoon-Regular.ttf);
     } 
 
 /* texte */
@@ -77,67 +77,168 @@ body {
     margin-top: 10px;
     position: absolute;
     font-size: 35px;
-    font-family: 'Archimedes','Times New Roman', Times, serif;
-    color:black;
+    font-family: 'Coming Soon', cursive;
+    color:#32808f;
     padding: 10px;
 }
 
 /* animation objets shake  */
 
 #poissons{
+
     transform-origin: 50% 50%;
     position: absolute;
-    animation: poissons-animation 8s infinite alternate;
+    animation: poissons-animation 8s infinite;    
 }
 @keyframes poissons-animation {
     0% {
-      left: 50%;
-      bottom: -2%;
+      
+      transform: translate(-5px);
     }
 
-    15% {
-      left: 50%;
-      bottom: 2%;
-      transform: rotate(0deg);
-    }
-    
-    30% {
-      left: 5%;
-      bottom: 2%;
-      transform: translate(-50px);
-    }
-    
-    45% {
-        transform: translate(-100px);
-    }
-    
-    60% {
-      left: 10%;
-      bottom: -2%;
-      transform: translate(-150px);
-    }
-    
-    75% {
-      left: 10%;
-      bottom: -5%;
-      transform: translate(-200px);
-    }
-    
-    90% {
-      left: 10%;
-      bottom: 5%;
-      transform: translate(-250px);
-    }
     100% {
-      left: 50%;
-      bottom: -2%;
+      
       transform: translate(-300px);
     }
   }
-  
-    
 
+  /* @keyframes demi-tour {
+    0%   { transform: scaleX(1); }
+    100%  { transform: scaleX(-1); }
+    
+  } */
+
+  /* yeux personnages */
+  
+  @keyframes yeux {
+    0%   {
+        transform: translateX(0%);
+    }
+    25%  {
+        transform: translateX(0.1%);
+    }
+    50%   {
+        transform: translateX(0%);
+    }
+    75%  {
+        transform: translateX(-0.1%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+  }
+
+#yeux {
+    transform-origin: 50% 50%;
+    animation: yeux 5s infinite;
+    
+  }
+
+  /* requin */
+  
+  
+  @keyframes requin {
+    0%   {
+        transform: translateY(0) translateX(-30%);
+    }
+    50%  {
+        transform: translateY(5%) translateX(40%);
+    }
+    100% {
+        transform: translateY(0) translateX(100%);
+    }
+  }
 
 #requin {
+    transform-origin: 50% 50%;
+    animation: requin 30s infinite;
+  }
 
+/* animation pluie  */
+
+@keyframes pluie {
+    0% {
+        opacity: 1;
+      
+      }
+      50% {
+        opacity: 0;
+        
+      }
+      100%{
+          opacity: 1;
+            
+      }  
 }
+
+#pluie {
+    animation: pluie 3s alternate infinite;
+    /* animation-delay: 1s; */
+}
+
+/* Rayan qui s'agite */
+
+@keyframes plongeur {
+    0%   {transform: translateY(0) ;}
+    50%  {transform: translateY(1%);}
+    100% {transform: translateY(0);}
+  }
+
+#plongeur {
+    transform-origin: 50% 50%;
+    animation: plongeur .5s linear alternate infinite;
+  }
+
+/* bus flottant  */
+@keyframes bus {
+    0%   {transform: translateY(0) ;}
+    50%  {transform: translateY(3%);}
+    100% {transform: translateY(0);}
+  }
+
+#bus {
+    transform-origin: 0% 50%;
+    animation: bus 50s alternate infinite;
+  }
+
+
+/* adaptation écrans  */
+
+@media (max-width: 992px) {
+    svg {
+        min-height: 100vh;
+    }
+
+    #warning {
+        font-size: 25px;
+    }  
+    
+}
+
+@media (max-width: 768px) { 
+
+    svg {
+        min-height: 100vh;
+    }
+
+    #warning {
+        font-size: 20px;
+    }
+
+    
+    
+}
+
+
+@media (max-width: 576px) { 
+    svg {
+        min-height: 100vh;
+    }
+
+    #warning {
+        font-size: 15px;
+        font-family: 'Archimedes','Times New Roman', Times, serif;
+        color: #bf2424;
+        padding: 10px;
+    }
+
