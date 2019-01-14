@@ -15,5 +15,5 @@ if (is_file('Controllers/'.$page.'Controller.php')){
     include ('Controllers/'.$page.'Controller.php');  
 } 
 else {
-     include ('404.php')  
-} 
+     include ('404.php');  
+}

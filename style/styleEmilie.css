@@ -1,0 +1,143 @@
+/* style page 404  */
+
+
+/* CSS RESET */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 0;
+}
+p {
+	line-height: 1;
+}
+h1, h2 {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Font */
+
+@font-face {
+    font-family: 'Archimedes';
+    src: url(fonts/Archimedes_Regular.otf);
+    } 
+
+/* texte */
+
+body {
+    position: relative;
+}
+
+#warning {
+    display: block;
+    text-align: center;
+    width: 50%;
+    min-height: 65px;
+    padding-top: 5px;
+    margin: 0 auto;
+    margin-top: 10px;
+    position: absolute;
+    font-size: 35px;
+    font-family: 'Archimedes','Times New Roman', Times, serif;
+    color:black;
+    padding: 10px;
+}
+
+/* animation objets shake  */
+
+#poissons{
+    transform-origin: 50% 50%;
+    position: absolute;
+    animation: poissons-animation 8s infinite alternate;
+}
+@keyframes poissons-animation {
+    0% {
+      left: 50%;
+      bottom: -2%;
+    }
+
+    15% {
+      left: 50%;
+      bottom: 2%;
+      transform: rotate(0deg);
+    }
+    
+    30% {
+      left: 5%;
+      bottom: 2%;
+      transform: translate(-50px);
+    }
+    
+    45% {
+        transform: translate(-100px);
+    }
+    
+    60% {
+      left: 10%;
+      bottom: -2%;
+      transform: translate(-150px);
+    }
+    
+    75% {
+      left: 10%;
+      bottom: -5%;
+      transform: translate(-200px);
+    }
+    
+    90% {
+      left: 10%;
+      bottom: 5%;
+      transform: translate(-250px);
+    }
+    100% {
+      left: 50%;
+      bottom: -2%;
+      transform: translate(-300px);
+    }
+  }
+  
+    
+
+
+#requin {
+
+}
