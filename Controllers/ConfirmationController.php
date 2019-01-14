@@ -20,42 +20,53 @@ if (isset($_POST['envoyer'])) {
 	$total = count($_FILES['upload']['tmp_name']);
 	
 
-	$dossier = mkdir('uploads/'.$nomDossier,0777,TRUE);
-	
+  $dossier = mkdir('uploads/'.$nomDossier,0777,TRUE);
+  
 
-	$definitive_folder_path='uploads/'.$nomDossier;
+  $definitive_folder_path='uploads/'.$nomDossier;
+$error=0;
 
-	for ($i=0; $i < $total; $i++) { 
-		$temporaryUploadpath = $_FILES['upload']['tmp_name'][$i];
+  for ($i=0; $i < $total; $i++) { 
+    $temporaryUploadpath = $_FILES['upload']['tmp_name'][$i];
 
-		$definitivePathName = 'uploads/'.$nomDossier.'/'. $_FILES['upload']['name'][$i];
+    $definitivePathName = 'uploads/'.$nomDossier.'/'. $_FILES['upload']['name'][$i];
 
-		$message_confirmation[]="";
+    $message_confirmation[]="";
 
-		$extension = substr(strrchr($_FILES['upload']['name'][$i], "."), 1);
-    
-		if ($extension !== 'exe' || $extension !== 'php'){  
+    $extension = substr(strrchr($_FILES['upload']['name'][$i], "."), 1);
+    if (1 == 1){  
 
-			if (move_uploaded_file($temporaryUploadpath, $definitivePathName)){
-				$message_confirmation[] .= 'Le fichier "'.$_FILES['upload']['name'][$i].'"" a bien été uploadé.<br>';
+      if (move_uploaded_file($temporaryUploadpath, $definitivePathName)){
+        $message_confirmation[] .= 'Le fichier "'.$_FILES['upload']['name'][$i].'"" a bien été uploadé.<br>';
 
-			} else {
-				$message_confirmation[] .='Le fichier "'.$_FILES['upload']['name'][$i].'" a fait naufrage avec le Titanic.';
+      } else {
+        $message_confirmation[] .='Le fichier "'.$_FILES['upload']['name'][$i].'" a fait naufrage avec le Titanic.<br>';
+      $error++;
 
-			} 
-		}
-	}
+      } 
+    }
+  }
 // (add .$nomDossier.'/ dans le chemin, mais comment créer le dossier?)
 
-	$new_file=InsertInfo($uniqId,$nom, $destinataire,$expediteur,$message,$definitive_folder_path,$nomDossier);
+  $new_file=InsertInfo($uniqId,$nom, $destinataire,$expediteur,$message,$definitive_folder_path,$nomDossier);
 
 $url_telechargement='https://'.$_SERVER['HTTP_HOST'].'/Projet_15_wetransfer/?page=Resultat&id='.$uniqId;
+ 
+if ($error==$total) {
+  $lienTelechargement ='<p>Aucun fichier n\'a été uploadé.</p>';
+} else if ($error == 0){
+  $lienTelechargement ='<p>Vous pouvez aussi diffuser ce lien de téléchargement: <a href="'.$url_telechargement.'">'.$url_telechargement.'</a></p>';
+} else {
+  $lienTelechargement='<p>Certains fichiers n\'ont pas été chargés. Les autres ont bien été envoyés. Vous pouvez diffuser ce lien:<a href="'.$url_telechargement.'">'.$url_telechargement.'</a></p> ';
+
+}
+
 
 // HZip::zipDir(path)
 //zipping
+//pour régler pb de aucun fichier envoyé, comparer error avec total. Si =, c'est bon, si inférieur mais plus grand que , un fichier n'a pas arché, si 0, rien n'a marché. Et virer le lien.
 
 $rootPath = realpath($definitive_folder_path);
-
 
 // Initialize archive object
 $zip = new ZipArchive();
@@ -92,7 +103,8 @@ foreach ($files as $name => $file)
 }
 
 // Zip archive will be created only after closing object
-$zip->close();
+//@ devant la ligne: cache les warnings et messages d'erreur
+@$zip->close();
 
 //remove directory:
 // Delete all files from "delete list"
@@ -101,6 +113,7 @@ foreach ($filesToDelete as $file)
     unlink($file);
 }
 rmdir($rootPath);
+
 
 
 

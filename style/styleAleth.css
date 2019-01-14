@@ -28,7 +28,9 @@ p {
 }
 
 /**************** HOME : la carte postale d'envoi ***************/
-
+.titreHome {
+	margin: 0 30px;
+}
 /*contenant du formulaire*/
 #cartepostale {
 	display: block;
@@ -128,7 +130,7 @@ display: none;
 	max-height: 350px;
 	left: 50%;
 	margin-left: -250px;
-
+	z-index: -2;
 }
 .dessinVille {
 	
@@ -268,4 +270,8 @@ svg {
 			flex-direction: column;
 			justify-content: space-between;
 		}
+		.titreHome {
+	margin: 0 5px;
+	font-size: 1.1rem;
+}
 	}

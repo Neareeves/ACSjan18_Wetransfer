@@ -3,13 +3,13 @@
 <div class="container">
 	<div id="cartepostale">
 		<div id="cartepostaleContenu" id="titanicus">
-			<p>
+			<p id="texteTitanic">
 				<?php if (isset($message_confirmation)) {
 
 for ($i=0; $i < count($message_confirmation); $i++) { 
             echo $message_confirmation[$i];
 }
-            echo '<p>Vous pouvez aussi diffuser ce lien de téléchargement: <a href="'.$url_telechargement.'">'.$url_telechargement.'</a></p>';
+          echo $lienTelechargement;
             } else {
                echo '<p>Aucun colis n\'a été déposé pour livraison express... </p>';
                echo "<p style='font-size:1.2rem;'>Cliquez <a href='?page=home'>ici</a> pour retenter l'opération.</p>";
@@ -22,6 +22,8 @@ for ($i=0; $i < count($message_confirmation); $i++) {
 	</div>
 	<div class="imagesConfirmation">
 		<div class="titanic" >
+
+
 		<svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
